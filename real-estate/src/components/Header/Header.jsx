@@ -14,13 +14,27 @@ function Header() {
             <li>Rent</li>
             <li>Buy</li>
             <li>Sell</li>
-            <li>
-              Manage Property<i className="fa fa-angle-down"></i>
+            <li id="nav_dropDown">
+              <select name="" >
+                <option value="">Manage Property</option>
+                <option value="">Demo 1</option>
+                <option value="">Demo 2</option>
+                <option value="">Demo 3</option>
+                
+              </select>
             </li>
             <li>
-              Resources<i className="fa fa-angle-down"></i>
+            <select name="" id="nav_dropDown">
+              <option value="">Resources</option>
+                <option value="">Demo 1</option>
+                <option value="">Demo 2</option>
+                <option value="">Demo 3</option>
+                
+              </select>
             </li>
-            <Link to ="/Favorites"><li className="favorites">Favorites</li></Link>
+            <li >
+            <Link to ="/Favorites" className="favorites">Favorites</Link>
+            </li>
 
           </ul>
           <div className="login_signup">

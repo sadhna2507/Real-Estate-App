@@ -13,16 +13,32 @@ button:hover{
 /* -------------------------------------Navbar-------------------------- */
 .navbar {
   width: 100%;
-  height: 80px;
+  height:80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   /* box-shadow: 0 0 2px; */
-  border-bottom: 2px solid rgb(175, 174, 174);
+  border: 2px solid rgb(175, 174, 174);
+  background-color: white;
+  position:fixed;
+  top: 0px;
+  z-index: 1;
 }
 .sub_navbar{
+  width: 95%;
+height: 60px;
+
+
   /* border: 2px solid black; */
-margin: 2rem;
+margin: 1rem;
+/* padding-bottom: 1rem; */
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
   align-items: center;
+
+  
   
 }
 .icon_heading{
@@ -42,13 +58,15 @@ color: rgb(209, 117, 248) ;
   /* border: 2px solid black; */
   display: flex
 }
-.sub_heading>li>i {
-  /* border: 2px solid black; */
 
-  color: rgb(209, 117, 248);
-  font-size: 20px;
-  margin-left: 0.5rem;
+li select {
+  width: 100%;
+  border: white;
+  cursor: pointer;
 }
+/* li select:hover{
+  background-color: rgb(209, 117, 248);
+} */
 .login_signup{
   /* border: 2px solid black; */
   display: flex;
@@ -66,10 +84,19 @@ color: rgb(209, 117, 248) ;
 }
 li{
 /* border: 2px solid black; */
+border-radius: 5px;
 margin: 0px 15px;
-padding: 0rem 0.8rem;
+padding: 0.5rem 0.8rem;
+padding-bottom: 5px;
   list-style-type: none;
+  cursor: pointer;
 }
+/* li:hover{
+border: 2px solid black;
+border-radius: 5px;
+background-color: rgb(209, 117, 248);
+} */
+
 .favorites{
   /* border: 2px solid black; */
   color: black;
@@ -118,12 +145,25 @@ Link{
 }
 
 
-select {
+.location select {
   width: 100%;
   border: white;
   color: black;
   font-weight: bold;
 }
+.price select{
+  width: 100%;
+  border: white;
+  color: black;
+  font-weight: bold;
+}
+.propertytype select{
+  width: 100%;
+  border: white;
+  color: black;
+  font-weight: bold;
+}
+
 
 .filter_container>div>input {
   border: none;
@@ -158,7 +198,7 @@ select {
   column-gap: 5rem;
   row-gap: 2rem; 
 }
-input{
+.search_container>input{
   border: 2px solid black;
   width: 300px;
   border-radius: 5px;
@@ -190,6 +230,13 @@ padding: 0.3rem;
 .price_icon>button{
   border-radius: 50%;
   background-color: white;
+}
+.price_icon>button:active{
+  background-color: rgb(209, 117, 248) ;
+}
+a.favorites{
+  /* border: 2px solid black; */
+  text-decoration: none;
 }
 
 .bhk{

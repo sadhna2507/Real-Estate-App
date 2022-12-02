@@ -46,8 +46,6 @@ function Data() {
             && 
             (search.date==="" || search.date <= searchvalue.date) 
       ) {
-        // console.log("IT is TRUE")
-        // console.log(search.date, searchvalue.date)
         return searchvalue;
       }
     });
@@ -94,10 +92,10 @@ function Data() {
               <div className="location">
                 <p >Location</p>
                 <select id="dropdowm" name="Location" onChange={HandleChange}>
-                  <option id="0" value="All">All</option>
-                  <option id="1" value="Delhi">Delhi</option>
-                  <option id="2" value="Mumbai">Mumbai</option>
-                  <option id="3" value="Noida">Noida</option>
+                  <option  value="All">All</option>
+                  <option  value="Delhi">Delhi</option>
+                  <option  value="Mumbai">Mumbai</option>
+                  <option  value="Noida">Noida</option>
                 </select>
               </div>
               <div className="date">
