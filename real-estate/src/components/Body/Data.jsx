@@ -1,20 +1,20 @@
-import React from "react";
 import { useState, useEffect, useContext } from "react";
+
+import React from "react";
 import axios from "axios";
-import ABC from "../CreateContext";
+import userContext from "../CreateContext";
+
 function Data() {
   const [data, SetData] = useState([]);
-  const { FavoriteItem, setFavoriteItem } = useContext(ABC);
+  const { favoriteItem, setFavoriteItem } = useContext(userContext);
   const [ResultData, setResultData] = useState([]);
   const [search, setsearch] = useState({
     price: "",
     Location: "",
     date: "",
     Type: "",
-    
   });
 
-  
   useEffect(() => {
     axios
       .get(
@@ -22,56 +22,45 @@ function Data() {
       )
       .then((response) => {
         SetData(response.data);
-        setResultData(response.data)
-        
+        setResultData(response.data);
       });
   }, []);
 
-  
-
-  const HandleSearch = () => {
+  const handleSearch = () => {
     let splitprice = search.price.split("-");
     let xPrice = parseInt(splitprice[0]);
     let yPrice = parseInt(splitprice[1]);
     const filterData = ResultData.filter((searchvalue) => {
-     
       let myPrice = searchvalue.price;
-      myPrice = parseInt(myPrice.slice(1,2)+myPrice.slice(3));
-      let tempLocation = searchvalue.Location.split(",")
+      myPrice = parseInt(myPrice.slice(1, 2) + myPrice.slice(3));
+      let tempLocation = searchvalue.Location.split(",");
       let myLocation = tempLocation[1];
       if (
-          (myLocation===search.Location || search.Location === "" )&&
-            ((xPrice<= myPrice && yPrice >= myPrice)) &&
-            (searchvalue.PropertyType === search.Type || searchvalue.PropertyType == "" ) 
-            && 
-            (search.date==="" || search.date <= searchvalue.date) 
+        (myLocation === search.Location || search.Location === "") &&
+        xPrice <= myPrice &&
+        yPrice >= myPrice &&
+        (searchvalue.PropertyType === search.Type ||
+          searchvalue.PropertyType == "") &&
+        (search.date === "" || search.date <= searchvalue.date)
       ) {
         return searchvalue;
       }
     });
     SetData(filterData);
-    
-  };
-  
-  
-
-  
-  const HandleFavorite = (item) => {
-    
-    console.log(item)
-    setFavoriteItem([...FavoriteItem, item]);
   };
 
-  const HandleChange = (e) => {
+  const handleFavorite = (item) => {
+    console.log(item);
+    setFavoriteItem([...favoriteItem, item]);
+  };
+
+  const handleChange = (e) => {
     const value = e.target.value;
     setsearch({
       ...search,
       [e.target.name]: value,
     });
   };
-
-
-
 
   return (
     <div>
@@ -85,42 +74,44 @@ function Data() {
                 name=""
                 id="mainsearch"
                 placeholder="Search with SearchBar"
-                
+                onChange={handleChange}
               />
             </div>
             <div className="filter_container">
               <div className="location">
-                <p >Location</p>
-                <select id="dropdowm" name="Location" onChange={HandleChange}>
-                  <option  value="All">All</option>
-                  <option  value="Delhi">Delhi</option>
-                  <option  value="Mumbai">Mumbai</option>
-                  <option  value="Noida">Noida</option>
+                <p>Location</p>
+                <select id="dropdowm" name="Location" onChange={handleChange}>
+                  <option value="All">All</option>
+                  <option value="Delhi">Delhi</option>
+                  <option value="Mumbai">Mumbai</option>
+                  <option value="Noida">Noida</option>
                 </select>
               </div>
               <div className="date">
                 <p>When</p>
-                <input type="date" name="date"  onChange={HandleChange}/>
+                <input type="date" name="date" onChange={handleChange} />
               </div>
 
               <div className="price">
                 <p>Price</p>
-                <select name="price" id="dropdowm" onChange={HandleChange} >
+                <select name="price" id="dropdowm" onChange={handleChange}>
                   <option value="2000-3000">2000-3000</option>
                   <option value="3100-4000">3100-4000</option>
                   <option value="4100-5000">4100-5000</option>
                 </select>
               </div>
               <div className="propertytype">
-                <p >Property type </p>
-                <select name="Type"  id="dropdowm" onChange={HandleChange}>
+                <p>Property type </p>
+                <select name="Type" id="dropdowm" onChange={handleChange}>
                   <option value="House">House</option>
                   <option value="Apartment">Apartment</option>
                   <option value="Villa">Villa</option>
                 </select>
               </div>
               <div>
-                <button className="searchButton" onClick={HandleSearch}>Search</button>
+                <button className="searchButton" onClick={handleSearch}>
+                  Search
+                </button>
               </div>
             </div>
           </div>
@@ -128,9 +119,10 @@ function Data() {
       </div>
       <div className="data_container">
         <div className="subdata_container">
-          
-          {data.length==0?<h1>No Data Found</h1>:data.map(
-            (item) => {
+          {data.length == 0 ? (
+            <h1>No Data Available...</h1>
+          ) : (
+            data.map((item) => {
               return (
                 <>
                   <div className="house_show">
@@ -138,7 +130,7 @@ function Data() {
                       <div className="HouseIhg">
                         <img src={item.image} alt="" />
                       </div>
-                      <div className="detaills_cotainer">
+                      <div className="details_container">
                         <div className="price_icon">
                           <p>
                             <strong style={{ color: "rgb(209, 117, 248)" }}>
@@ -146,8 +138,11 @@ function Data() {
                             </strong>
                             /month
                           </p>
-                          <button onClick={() => HandleFavorite(item)} >
-                            <i id={item.id} class="fa-regular fa-heart heart"></i>
+                          <button onClick={() => handleFavorite(item)}>
+                            <i
+                              id={item.id}
+                              class="fa-regular fa-heart heart"
+                            ></i>
                           </button>
                         </div>
                         <h2>{item.name}</h2>
@@ -172,7 +167,7 @@ function Data() {
                   </div>
                 </>
               );
-            }
+            })
           )}
         </div>
       </div>

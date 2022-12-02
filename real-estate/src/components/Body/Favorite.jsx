@@ -1,41 +1,43 @@
-import React from 'react'
-import ABC from '../CreateContext';
-import { useContext } from 'react';
+import { useContext } from "react";
+
+import React from "react";
+import userContext from "../CreateContext";
+
 function Favorite() {
-  const { FavoriteItem } = useContext(ABC);
-//   console.log(FavoriteItem)
+  const { favoriteItem } = useContext(userContext);
+  //   console.log(favoriteItem)
 
   return (
-    
     <div>
       <div className="data_container">
-          <div className="subdata_container">
-          {FavoriteItem.map(
-              ({
-                name,
-                image,
-                price,
-                Location,
-                PropertyType,
-                bathroom,
-                bed,
-                area,
-                id,
-              }) => {
-                return (
-                  <>
-                    <div className="house_show">
-                      <div id="House_box" className={price} key={id}>
-                        <div className="HouseImg">
-                          <img src={image} alt="" />
-                        </div>
-                        <div className="detaills_cotainer">
+        <div className="subdata_container">
+          {favoriteItem.map(
+            ({
+              name,
+              image,
+              price,
+              Location,
+              PropertyType,
+              bathroom,
+              bed,
+              area,
+              id,
+            }) => {
+              return (
+                <>
+                  <div className="house_show">
+                    <div id="House_box" className={price} key={id}>
+                      <div className="HouseImg">
+                        <img src={image} alt="" />
+                      </div>
+                      <div className="details_container">
                         <div className="price_icon">
                           <p>
-                            <strong style={{ color: "rgb(209, 117, 248)" }}>{price}</strong>/month
+                            <strong className="symbol">{price}</strong>/month
                           </p>
-                          <button><i class="fa-regular fa-heart heart"></i></button>
-                          
+                          <button>
+                            <i class="fa-regular fa-heart heart"></i>
+                          </button>
                         </div>
                         <h2>{name}</h2>
                         <p className="propertytype">{PropertyType}</p>
@@ -54,17 +56,17 @@ function Favorite() {
                             {area} Area
                           </p>
                         </div>
-                        </div>
                       </div>
                     </div>
-                  </>
-                );
-              }
-            )}
-          </div>
-          </div>
+                  </div>
+                </>
+              );
+            }
+          )}
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Favorite
+export default Favorite;

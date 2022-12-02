@@ -1,43 +1,41 @@
-import Header from "./components/Header/Header";
-// import logo from './logo.svg';
-import "./App.css";
-import Data from "./components/Body/Data";
 import React, { useState } from "react";
-import Favorite from './components/Body/Favorite';
 import { Route, Routes } from "react-router-dom";
-import ABC from "./components/CreateContext";
+
+import Header from "./components/Header/Header";
+import Data from "./components/Body/Data";
+import Favorite from "./components/Body/Favorite";
+import userContext from "./components/CreateContext";
+
+import "./App.css";
 
 function App() {
-  const [FavoriteItem, setFavoriteItem] = useState([]);
- 
+  const [favoriteItem, setFavoriteItem] = useState([]);
+
   return (
     <div className="App">
       <Header />
-      <ABC.Provider value={{FavoriteItem, setFavoriteItem}}>
-      <Routes>
-        
-        <Route
-          path="/"
-          element={
-            <Data 
-            
-              FavoriteItem={FavoriteItem}
-              setFavoriteItem={setFavoriteItem}
-            />
-          }
-        ></Route>
-        <Route
-          path="/Favorites"
-          element={
-            <Favorite
-              FavoriteItem={FavoriteItem}
-              setFavoriteItem={setFavoriteItem}
-            />
-          }
-        ></Route> 
-        
-      </Routes>
-      </ABC.Provider>
+      <userContext.Provider value={{ favoriteItem, setFavoriteItem }}>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Data
+                favoriteItem={favoriteItem}
+                setFavoriteItem={setFavoriteItem}
+              />
+            }
+          ></Route>
+          <Route
+            path="/Favorites"
+            element={
+              <Favorite
+                favoriteItem={favoriteItem}
+                setFavoriteItem={setFavoriteItem}
+              />
+            }
+          ></Route>
+        </Routes>
+      </userContext.Provider>
     </div>
   );
 }

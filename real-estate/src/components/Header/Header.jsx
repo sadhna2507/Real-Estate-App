@@ -15,27 +15,26 @@ function Header() {
             <li>Buy</li>
             <li>Sell</li>
             <li id="nav_dropDown">
-              <select name="" >
+              <select name="">
                 <option value="">Manage Property</option>
                 <option value="">Demo 1</option>
                 <option value="">Demo 2</option>
                 <option value="">Demo 3</option>
-                
               </select>
             </li>
             <li>
-            <select name="" id="nav_dropDown">
-              <option value="">Resources</option>
+              <select name="" id="nav_dropDown">
+                <option value="">Resources</option>
                 <option value="">Demo 1</option>
                 <option value="">Demo 2</option>
                 <option value="">Demo 3</option>
-                
               </select>
             </li>
-            <li >
-            <Link to ="/Favorites" className="favorites">Favorites</Link>
+            <li>
+              <Link to="/Favorites" className="favorites">
+                Favorites
+              </Link>
             </li>
-
           </ul>
           <div className="login_signup">
             <button className="login">Login</button>

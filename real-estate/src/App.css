@@ -1,62 +1,51 @@
-
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body{
+body {
   background-color: rgb(219, 219, 219);
 }
-button:hover{
+button:hover {
   cursor: pointer;
 }
 /* -------------------------------------Navbar-------------------------- */
 .navbar {
   width: 100%;
-  height:80px;
+  height: 80px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  /* box-shadow: 0 0 2px; */
   border: 2px solid rgb(175, 174, 174);
   background-color: white;
-  position:fixed;
+  position: fixed;
   top: 0px;
   z-index: 1;
 }
-.sub_navbar{
+.sub_navbar {
   width: 95%;
-height: 60px;
-
-
-  /* border: 2px solid black; */
-margin: 1rem;
-/* padding-bottom: 1rem; */
+  height: 60px;
+  margin: 1rem;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-
-  
-  
 }
-.icon_heading{
-  /* border: 2px solid black; */
+.icon_heading {
   display: flex;
 }
-.estate{
+.estate {
   font-size: 30px;
   margin-left: 0.2rem;
 }
-.fa-house-chimney{
-font-size: 2rem;
-color: rgb(209, 117, 248) ;
+.fa-house-chimney {
+  font-size: 2rem;
+  color: rgb(209, 117, 248);
 }
-.sub_heading{
+.sub_heading {
   margin-right: 20rem;
-  /* border: 2px solid black; */
-  display: flex
+  display: flex;
 }
 
 li select {
@@ -64,70 +53,55 @@ li select {
   border: white;
   cursor: pointer;
 }
-/* li select:hover{
-  background-color: rgb(209, 117, 248);
-} */
-.login_signup{
-  /* border: 2px solid black; */
+
+.login_signup {
   display: flex;
   justify-content: space-between;
 }
-.login_signup>button{
- margin-left: 1.5rem;
- padding: 0.5rem;
+.login_signup > button {
+  margin-left: 1.5rem;
+  padding: 0.5rem;
   font-size: 1.2rem;
   border-radius: 10%;
 }
-.singup{
+.singup {
   color: white;
-  background-color:  rgb(209, 117, 248);
+  background-color: rgb(209, 117, 248);
 }
-li{
-/* border: 2px solid black; */
-border-radius: 5px;
-margin: 0px 15px;
-padding: 0.5rem 0.8rem;
-padding-bottom: 5px;
+li {
+  border-radius: 5px;
+  margin: 0px 15px;
+  padding: 0.5rem 0.8rem;
+  padding-bottom: 5px;
   list-style-type: none;
   cursor: pointer;
 }
-/* li:hover{
-border: 2px solid black;
-border-radius: 5px;
-background-color: rgb(209, 117, 248);
-} */
 
-.favorites{
-  /* border: 2px solid black; */
+.favorites {
   color: black;
   padding: 0rem 0.8rem;
 }
-Link{
+Link {
   text-decoration: none;
 }
 
 /* --------------------------------------------Filter Navbar---------------------------- */
-.mainfilter_container{
+.mainfilter_container {
   width: 100%;
   display: flex;
   justify-content: center;
-  /* background-color:rgb(244, 244, 244) */
 }
-.filtersub_container{
+.filtersub_container {
   width: 80%;
-  /* border: 2px solid black; */
-  margin-top: 4rem;
+  margin-top: 7rem;
 }
-.search_container{
-  /* border: 2px solid black; */
+.search_container {
   margin: 2rem 0rem;
   display: flex;
   justify-content: space-between;
 }
 
-
 .filter_container {
-  /* border: 2px solid black; */
   background-color: white;
 
   width: 100%;
@@ -137,13 +111,10 @@ Link{
   align-items: center;
 }
 
-.filter_container>div {
+.filter_container > div {
   /* border: 2px solid black; */
   width: 10%;
-
-
 }
-
 
 .location select {
   width: 100%;
@@ -151,25 +122,24 @@ Link{
   color: black;
   font-weight: bold;
 }
-.price select{
+.price select {
   width: 100%;
   border: white;
   color: black;
   font-weight: bold;
 }
-.propertytype select{
+.propertytype select {
   width: 100%;
   border: white;
   color: black;
   font-weight: bold;
 }
 
-
-.filter_container>div>input {
+.filter_container > div > input {
   border: none;
 }
 
-.searchButton{
+.searchButton {
   background-color: rgb(209, 117, 248);
   padding: 0.8rem 2rem;
   color: white;
@@ -178,83 +148,64 @@ Link{
 }
 
 /* --------------------------------Data container------------------------- */
-.data_container{
-  /* border: 2px solid black; */
+.data_container {
   width: 100%;
   display: flex;
-  justify-content: center; 
-
-}
-.subdata_container{
-  width: 80%;
-  /* border: 2px solid black; */
+  justify-content: center;
   margin-top: 4rem;
-  /* background-color: white; */
-  /* display: flex;
-  /* flex-wrap: wrap; */
+}
+.subdata_container {
+  width: 80%;
+  margin-top: 4rem;
   display: grid;
   grid-template-columns: repeat(3, auto);
-  /* grid-template-columns: 1fr 1fr 1fr; */
   column-gap: 5rem;
-  row-gap: 2rem; 
+  row-gap: 2rem;
 }
-.search_container>input{
+.search_container > input {
   border: 2px solid black;
   width: 300px;
   border-radius: 5px;
-
 }
 
-img{
-  object-fit: cover; 
+img {
+  object-fit: cover;
   height: 250px;
   width: 350px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  /* min-width: 100%;
-  min-height: 100%;
-  height: auto;
-  width: auto; */
-
-  
 }
-.price_icon{
-  /* border: 2px solid black; */
+.price_icon {
   display: flex;
   justify-content: space-between;
 }
-.heart{
+.heart {
   font-size: 1.2rem;
-padding: 0.3rem;
+  padding: 0.3rem;
 }
-.price_icon>button{
+.price_icon > button {
   border-radius: 50%;
   background-color: white;
 }
-.price_icon>button:active{
-  background-color: rgb(209, 117, 248) ;
+.price_icon > button:active {
+  background-color: rgb(209, 117, 248);
 }
-a.favorites{
-  /* border: 2px solid black; */
+a.favorites {
   text-decoration: none;
 }
 
-.bhk{
-  /* border: 2px solid black; */
+.bhk {
   display: flex;
   justify-content: space-between;
   margin-top: 1rem;
 }
 
-#House_box{
-  /* border: 2px solid black; */
+#House_box {
   background-color: white;
   border-radius: 10px;
   overflow: hidden;
   width: 350px;
 }
-.detaills_cotainer{
-  /* border: 2px solid black; */
-padding: 1rem 1rem;
-
+.details_container {
+  padding: 1rem 1rem;
 }
