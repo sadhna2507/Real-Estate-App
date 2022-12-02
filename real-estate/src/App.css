@@ -1,0 +1,213 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: rgb(219, 219, 219);
+}
+button:hover{
+  cursor: pointer;
+}
+/* -------------------------------------Navbar-------------------------- */
+.navbar {
+  width: 100%;
+  height: 80px;
+  /* box-shadow: 0 0 2px; */
+  border-bottom: 2px solid rgb(175, 174, 174);
+}
+.sub_navbar{
+  /* border: 2px solid black; */
+margin: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+.icon_heading{
+  /* border: 2px solid black; */
+  display: flex;
+}
+.estate{
+  font-size: 30px;
+  margin-left: 0.2rem;
+}
+.fa-house-chimney{
+font-size: 2rem;
+color: rgb(209, 117, 248) ;
+}
+.sub_heading{
+  margin-right: 20rem;
+  /* border: 2px solid black; */
+  display: flex
+}
+.sub_heading>li>i {
+  /* border: 2px solid black; */
+
+  color: rgb(209, 117, 248);
+  font-size: 20px;
+  margin-left: 0.5rem;
+}
+.login_signup{
+  /* border: 2px solid black; */
+  display: flex;
+  justify-content: space-between;
+}
+.login_signup>button{
+ margin-left: 1.5rem;
+ padding: 0.5rem;
+  font-size: 1.2rem;
+  border-radius: 10%;
+}
+.singup{
+  color: white;
+  background-color:  rgb(209, 117, 248);
+}
+li{
+/* border: 2px solid black; */
+margin: 0px 15px;
+padding: 0rem 0.8rem;
+  list-style-type: none;
+}
+.favorites{
+  /* border: 2px solid black; */
+  color: black;
+  padding: 0rem 0.8rem;
+}
+Link{
+  text-decoration: none;
+}
+
+/* --------------------------------------------Filter Navbar---------------------------- */
+.mainfilter_container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* background-color:rgb(244, 244, 244) */
+}
+.filtersub_container{
+  width: 80%;
+  /* border: 2px solid black; */
+  margin-top: 4rem;
+}
+.search_container{
+  /* border: 2px solid black; */
+  margin: 2rem 0rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.filter_container {
+  /* border: 2px solid black; */
+  background-color: white;
+
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter_container>div {
+  /* border: 2px solid black; */
+  width: 10%;
+
+
+}
+
+
+select {
+  width: 100%;
+  border: white;
+  color: black;
+  font-weight: bold;
+}
+
+.filter_container>div>input {
+  border: none;
+}
+
+.searchButton{
+  background-color: rgb(209, 117, 248);
+  padding: 0.8rem 2rem;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+/* --------------------------------Data container------------------------- */
+.data_container{
+  /* border: 2px solid black; */
+  width: 100%;
+  display: flex;
+  justify-content: center; 
+
+}
+.subdata_container{
+  width: 80%;
+  /* border: 2px solid black; */
+  margin-top: 4rem;
+  /* background-color: white; */
+  /* display: flex;
+  /* flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  column-gap: 5rem;
+  row-gap: 2rem; 
+}
+input{
+  border: 2px solid black;
+  width: 300px;
+  border-radius: 5px;
+
+}
+
+img{
+  object-fit: cover; 
+  height: 250px;
+  width: 350px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  /* min-width: 100%;
+  min-height: 100%;
+  height: auto;
+  width: auto; */
+
+  
+}
+.price_icon{
+  /* border: 2px solid black; */
+  display: flex;
+  justify-content: space-between;
+}
+.heart{
+  font-size: 1.2rem;
+padding: 0.3rem;
+}
+.price_icon>button{
+  border-radius: 50%;
+  background-color: white;
+}
+
+.bhk{
+  /* border: 2px solid black; */
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+#House_box{
+  /* border: 2px solid black; */
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 350px;
+}
+.detaills_cotainer{
+  /* border: 2px solid black; */
+padding: 1rem 1rem;
+
+}
