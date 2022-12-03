@@ -5,10 +5,10 @@ import axios from "axios";
 import userContext from "../CreateContext";
 
 function Data() {
-  const [data, SetData] = useState([]);
+  const [data, setData] = useState([]);
   const { favoriteItem, setFavoriteItem } = useContext(userContext);
-  const [ResultData, setResultData] = useState([]);
-  const [search, setsearch] = useState({
+  const [resultData, setResultData] = useState([]);
+  const [search, setSearch] = useState({
     price: "",
     Location: "",
     date: "",
@@ -21,7 +21,7 @@ function Data() {
         "https://raw.githubusercontent.com/sadhna2507/Cricket-API/master/House.json"
       )
       .then((response) => {
-        SetData(response.data);
+        setData(response.data);
         setResultData(response.data);
       });
   }, []);
@@ -30,7 +30,7 @@ function Data() {
     let splitprice = search.price.split("-");
     let xPrice = parseInt(splitprice[0]);
     let yPrice = parseInt(splitprice[1]);
-    const filterData = ResultData.filter((searchvalue) => {
+    const filterData = resultData.filter((searchvalue) => {
       let myPrice = searchvalue.price;
       myPrice = parseInt(myPrice.slice(1, 2) + myPrice.slice(3));
       let tempLocation = searchvalue.Location.split(",");
@@ -46,7 +46,7 @@ function Data() {
         return searchvalue;
       }
     });
-    SetData(filterData);
+    setData(filterData);
   };
 
   const handleFavorite = (item) => {
@@ -56,7 +56,7 @@ function Data() {
 
   const handleChange = (e) => {
     const value = e.target.value;
-    setsearch({
+    setSearch({
       ...search,
       [e.target.name]: value,
     });
@@ -126,8 +126,8 @@ function Data() {
               return (
                 <>
                   <div className="house_show">
-                    <div id="House_box">
-                      <div className="HouseIhg">
+                    <div id="house_box">
+                      <div >
                         <img src={item.image} alt="" />
                       </div>
                       <div className="details_container">

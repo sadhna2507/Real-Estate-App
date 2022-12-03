@@ -26,8 +26,8 @@ function Favorite() {
               return (
                 <>
                   <div className="house_show">
-                    <div id="House_box" className={price} key={id}>
-                      <div className="HouseImg">
+                    <div id="house_box" className={price} key={id}>
+                      <div>
                         <img src={image} alt="" />
                       </div>
                       <div className="details_container">
